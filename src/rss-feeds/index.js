@@ -139,7 +139,7 @@ export default class RSSFeeds extends React.Component {
                         <div className="form-group mb-2">
                             <input type="text" placeholder="Enter RSS feed url" onChange={this.onChangeRssUrl} className="form-control" id="exampleInputEmail1"/>
                         </div>                        
-                        <button type="submit" className="btn btn-success mb-2" onClick={this.fetchRssFeeds}>Submit</button>
+                        <button type="submit" className="btn submit-btn btn-primary mb-2" onClick={this.fetchRssFeeds}>Submit</button>
                     </form>
                     {this.pageRecords.length > 0 ?  
 				        <div className="container-table">
@@ -158,6 +158,9 @@ export default class RSSFeeds extends React.Component {
                                     </tbody>
                                 </table>
                                 <div><Pagination totalPages={this.state.totalPages}></Pagination></div>
+                                <div className="row page-of">                       
+                                    <div>Page {this.state.currentPage + 1}/{this.state.totalPages.length}</div>
+                                </div>
                             </div>
                         </div> 
 			        :null}
